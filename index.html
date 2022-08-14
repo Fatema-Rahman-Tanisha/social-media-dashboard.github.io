@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Frontend Mentor | [Challenge Name Here]</title>
+  <style>
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: .4s;
+      transition: .4s;
+    }
+
+    input:checked+.slider {
+      background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+      box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+      border-radius: 34px;
+    }
+
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    .gridboxes{
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(4,1fr);
+      grid-gap: 25px;
+    }
+    @media (max-width: 1024px) { 
+      .gridboxes{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+     }
+  </style>
+</head>
+
+<body>
+  <div class="heading w-full lg:h-28 h-36 bg-[#f8f9fe] flex justify-around items-center lg:flex-row flex-col">
+    <div class="text lg:w-1/3 lg:h-2/3 flex flex-col justify-evenly ">
+      <h1 class="lg:text-3xl text-xl font-semibold">Social Media Dashboard</h1>
+      <p class="text-gray-500 font-semibold">Total Followers: 23,004</p>
+    </div>
+    <label class="switch">
+      <input type="checkbox" id="chk">
+      <span class="slider round"></span>
+    </label>
+
+  </div>
+  <div class="cardboxdash w-full lg:h-[37vh] h-[100vh] flex justify-evenly lg:gap-0 gap-[20px] items-center lg:flex-row flex-col"
+    style="background: linear-gradient(to bottom, #f8f9fe 50%, white 50%);">
+
+    <div class="cardfb box flex flex-col justify-evenly items-center border-t-4 border-[#1a90f5] w-[96%] lg:w-[13rem] xl:w-[17rem] 2xl:w-[20rem] h-[18rem] lg:h-[70%] bg-[#f0f3fa] hover:bg-[#e1e3f0]">
+      <div class="usarname flex w-2/3 justify-center items-center">
+        <img src="./images/icon-facebook.svg" alt="">
+        <span class=" px-3 text-lg font-semibold">@nathanf</span>
+      </div>
+      <div class="numofFollower font-bold text-4xl 2xl:text-6xl">1987</div>
+      <p class="followers text-gray-400 font-semibold uppercase" style="letter-spacing: 5px;">followers</p>
+      <p class="font-bold text-[#5ca192]">12 Today</p>
+    </div>
+
+    <div class="cardtwt box flex flex-col justify-evenly items-center border-t-4 border-[#1a90f5] w-[96%] lg:w-[13rem] xl:w-[17rem] 2xl:w-[20rem] h-[18rem] lg:h-[70%] bg-[#f0f3fa] hover:bg-[#e1e3f0]">
+      <div class="usarname flex w-2/3 justify-center items-center">
+        <img src="./images/icon-twitter.svg" alt="">
+        <span class=" px-3 text-lg font-semibold">@nathanf</span>
+      </div>
+      <div class="numofFollower font-bold text-4xl 2xl:text-6xl">1044</div>
+      <p class="followers text-gray-400 font-semibold uppercase" style="letter-spacing: 5px;">followers</p>
+      <p class="font-bold text-[#5ca192]">99 Today</p>
+    </div>
+
+    <div class="cardinsta box flex flex-col justify-evenly items-center w-[96%] lg:w-[13rem] xl:w-[17rem] 2xl:w-[20rem] h-[18rem] lg:h-[70%] bg-[#f0f3fa] hover:bg-[#e1e3f0]"
+      style=" 
+      box-sizing: content-box;
+      border-top-width: 4px;
+      border-style: solid;
+      border-image: linear-gradient(to left , red, rgba(255, 247, 0, 0.871));
+      border-image-slice: 1; ">
+      <div class="usarname flex w-2/3 justify-center items-center">
+        <img src="./images/icon-instagram.svg" alt="">
+        <span class=" px-3 text-lg font-semibold">@nathanf</span>
+      </div>
+      <div class="numofFollower font-bold text-4xl 2xl:text-6xl">11k</div>
+      <p class="followers text-gray-400 font-semibold uppercase" style="letter-spacing: 5px;">followers</p>
+      <p class="font-bold text-[#5ca192]">1099 Today</p>
+    </div>
+
+    <div class="cardyt box flex flex-col justify-evenly items-center w-[96%] lg:w-[13rem] xl:w-[17rem] 2xl:w-[20rem] h-[18rem] lg:h-[70%] bg-[#f0f3fa] hover:bg-[#e1e3f0] border-t-4 border-[#c30129]">
+      <div class="usarname flex w-2/3 justify-center items-center">
+        <img src="./images/icon-youtube.svg" alt="">
+        <span class=" px-3 text-lg font-semibold">@nathanf</span>
+      </div>
+      <div class="numofFollower font-bold text-4xl 2xl:text-6xl">11k</div>
+      <p class="followers text-gray-400 font-semibold uppercase" style="letter-spacing: 5px;">followers</p>
+      <p class="font-bold text-[#5ca192]">1099 Today</p>
+    </div>
+
+  </div>
+
+  <div class="overview lg:w-[95vw] xl:w-[82vw] lg:h-[46vh]  my-2 flex flex-col justify-between   mx-auto">
+    <p class="text-gray-400 font-bold text-2xl lg:text-left text-center py-3">Overview - Today</p>
+    <div class="gridboxes w-full h-[85%] ">
+<div class="fbpageview bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+  <p class="text-gray-400 font-bold text-xl">Page Views</p> <img src="./images/icon-facebook.svg" alt="">
+  </div>
+  <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+    <h1 class=" font-bold text-5xl">87</h1>
+    <p class="text-[#5ca192] font-bold text-lg">3%</p>
+  </div>
+</div>
+
+<div class="fblike bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Likes</p> <img src="./images/icon-facebook.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">52</h1>
+      <p class="text-[#ba294a] font-bold text-lg">2%</p>
+    </div>
+</div>
+<div class="instalike bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Likes</p> <img src="./images/icon-instagram.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">5462</h1>
+      <p class="text-[#5ca192] font-bold text-lg">2257%</p>
+    </div>
+</div>
+<div class="instaprofileview bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Profile Views</p> <img src="./images/icon-instagram.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">52k</h1>
+      <p class="text-[#5ca192] font-bold text-lg">1375%</p>
+    </div>
+</div>
+<div class="retweets bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Retweets</p> <img src="./images/icon-twitter.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">117</h1>
+      <p class="text-[#5ca192] font-bold text-lg">303%</p>
+    </div>
+</div>
+<div class="tweetlike bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Likes</p> <img src="./images/icon-twitter.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">507</h1>
+      <p class="text-[#5ca192] font-bold text-lg">553%</p>
+    </div>
+</div>
+<div class="ytlikes bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Likes</p> <img src="./images/icon-youtube.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">107</h1>
+      <p class="text-[#ba294a] font-bold text-lg">19%</p>
+    </div>
+</div>
+<div class="ytviews bg-[#f0f3fa] rounded-lg flex flex-col justify-evenly items-center hover:bg-[#e1e3f0] lg:h-auto lg:w-auto w-[96%] h-[10rem] box">
+  <div class="title w-[70%] h-[40%] flex justify-between items-center">
+    <p class="text-gray-400 font-bold text-xl">Total Views</p> <img src="./images/icon-youtube.svg" alt="">
+    </div>
+    <div class="data  w-[70%] h-[40%] flex justify-between items-center">
+      <h1 class=" font-bold text-5xl">1407</h1>
+      <p class="text-[#ba294a] font-bold text-lg">12%</p>
+    </div>
+</div>
+    </div>
+  </div>
+
+
+</body>
+<script src="./index.js"></script>
+</html>
